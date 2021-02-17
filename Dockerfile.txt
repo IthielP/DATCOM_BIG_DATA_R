@@ -1,0 +1,7 @@
+FROM rocker/r-base:latest
+MAINTAINER Ithiel
+
+RUN Rscript -e 'install.packages(c("tidyverse","caret","RSNNS","FSinR","forecast"))'
+RUN apt-get update
+
+COPY iris.R .
